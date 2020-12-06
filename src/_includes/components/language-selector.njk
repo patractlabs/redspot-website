@@ -1,0 +1,16 @@
+{% set pageUrl = page.url.split('/').slice(2).join('/') %}
+
+{% if locales.length %}
+  <div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link">
+      {% for l in locales -%}
+        {% if l.code == locale %}{{ l.label }}{% endif %}
+      {% endfor -%}
+    </a>
+    <div class="navbar-dropdown">
+      {% for locale in locales -%}
+        <a class="navbar-item" href="/{{ locale.code }}/{{ pageUrl }}" rel="alternate" hreflang="{{ locale.code }}">{{ locale.label }}</a>
+      {% endfor -%}
+    </div>
+  </div>
+{% endif %}

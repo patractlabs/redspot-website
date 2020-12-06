@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-docs
+---
+
+<div style="scroll-margin-top: 74px;">
+  <aside class="menu">
+    {{ content | toc | safe }}
+  </aside>
+  <section class="content">
+	{{ content | safe }}
+  </section>
+</div>
+

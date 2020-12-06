@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-plugins
+---
+
+{% set pluginlist = collections.plugin %}
+
+<div class="container is-max-desktop mt-6">
+  <h1 class="title is-2">{{ title }}</h1>
+
+  <div class="content">
+    <p>{{ content | safe }}</p>
+  </div>
+
+  <ul class="columns is-multiline is-variable is-3">
+      {% for plugin in pluginlist %}
+        <li class="column is-one-third">
+          <div class="card">
+            <div class="card-content " style="height: 228px; position: relative;">
+              <h4 class="title is-4">
+                <a href="{{ plugin.url | url }}">{{ plugin.data.heading }}</a>
+              </h4>
+              <p>{{ plugin.data.description }}</p>
+              <div style="position: absolute; bottom: 18px;">
+                {% for bage in plugin.data.bages %}
+                  <span class="tag is-warning title mb-1">{{ bage }}</span>
+                {% endfor %}
+              </div>
+            </div>
+            <footer class="card-footer is-flex is-justify-content-center is-align-items-center has-background-white-ter">
+              <a class="button is-danger is-rounded my-4">{{ 'Documentation' | i18n }}</a>
+            </footer>
+          </div>
+        </li>
+      {% endfor %}
+      
+    </ul>
+</div>
