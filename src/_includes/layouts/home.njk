@@ -48,7 +48,9 @@ templateClass: tmpl-home
       <img src="/img/plugin.png" width="256" alt="plugin"/>
       <p class="has-text-white has-text-centered mt-5">{{ 'plugin-desc' | i18n }}</p>
       <img class="mt-5"src="/img/plugin-illustration.png" width="256" alt="plugin illustratio"/>
-      <a class="button is-danger is-outlined is-rounded is-medium mt-6">{{ 'plugin-button' | i18n }}</a>
+      <a class="button is-danger is-outlined is-rounded is-medium mt-6" href="/{{ locale }}/plugins">
+        {{ 'plugin-button' | i18n }}
+      </a>
       <a class="has-text-white mt-4">{{ 'write-plugin' | i18n }}</a>
     </div>
     <ul class="is-flex is-flex-direction-column is-justify-content-space-between" style="width: 543px;">
@@ -80,8 +82,10 @@ templateClass: tmpl-home
 <section class="is-flex is-flex-direction-column is-align-items-center has-text-white" style="background: #1C1C1C; padding: 26px 0 34px;">
   <img src="{{ 'img-sample-code' | i18n }}" width="365" alt="smaple code"/>
   <p class="is-size-5" style="width: 839px; margin-top: 32px;">{{ 'sample-code' | i18n }}</p>
-  <img src="/img/sample-code-illustration.png" width="839" alt="smaple code illustration" style="margin: 32px auto;"/>
-  <a class="button is-danger is-outlined is-rounded is-medium mgt-medium">{{ 'more-examples' | i18n }}</a>
+  <img src="/img/sample-code.png" width="839" alt="smaple code" style="margin: 32px auto;"/>
+  <a class="button is-danger is-outlined is-rounded is-medium mgt-medium" href="/{{ locale }}/documentation">
+    {{ 'more-examples' | i18n }}
+  </a>
 </section>
 
 <section class="quick-start is-flex is-flex-direction-column is-align-items-center has-text-white">
@@ -93,31 +97,31 @@ templateClass: tmpl-home
   <footer class="footer is-flex is-flex-direction-column is-align-items-center has-text-white">
     <ul class="is-flex is-justify-content-space-evenly is-align-items-center is-size-5" style="width: 839px; height: 100%;">
       <li>
-        <a class="has-text-white">
+        <a class="has-text-white" href="mailto:hi@patract.io" target="_blank">
           <i class="fas fa-envelope mr-1" style="font-size: 24px;"></i>
           <span style="vertical-align: top;">Email</span>
         </a>
       </li>
       <li>
-        <a class="has-text-white">
+        <a class="has-text-white" href="https://github.com/patractlabs" target="_blank">
           <i class="fab fa-github mr-1" style="font-size: 24px;"></i>
           <span style="vertical-align: top;">Github</span>
         </a>
       </li>
       <li>
-        <a class="has-text-white">
+        <a class="has-text-white" href="https://twitter.com/patractlabs" target="_blank">
           <i class="fab fa-twitter mr-1" style="font-size: 24px;"></i>
           <span style="vertical-align: top;">Twitter</span>
         </a>
       </li>
       <li>
-        <a class="has-text-white">
+        <a class="has-text-white" href="https://patractlabs.medium.com" target="_blank">
           <i class="fab fa-medium mr-1" style="font-size: 24px;"></i>
           <span style="vertical-align: top;">Medium</span>
         </a>
       </li>
       <li>
-        <a class="has-text-white">
+        <a class="has-text-white" href="https://app.element.io/#/room/#PatractLabsDev:matrix.org" target="_blank">
           <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <g transform="translate(-863.000000, -6059.000000)" fill="#DFDFDF">

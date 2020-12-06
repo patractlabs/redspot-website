@@ -17,7 +17,7 @@ module.exports = {
   },
   slogan: {
     en: "Polkadot WASM Smart Contracts Development Scafold",
-    "zh-CN": "波卡 WASM 合约的开发脚手架"
+    "zh-CN": "波卡 WASM 合约的开发脚手架",
   },
   intro: {
     en:
@@ -69,15 +69,15 @@ module.exports = {
     en:
       "The flexibility and extensiblity of Redspot comes from its rich plug-in system. Developers can also easily developnew plugins and integrate them into their own contract development process.",
     "zh-CN":
-      "Redspot 的灵活性和扩展性来源于其丰富的插件系统。 开发者还可以很容易地开发新的插件集成进来， 并应用到自己的合约开发流程中。"
+      "Redspot 的灵活性和扩展性来源于其丰富的插件系统。 开发者还可以很容易地开发新的插件集成进来， 并应用到自己的合约开发流程中。",
   },
   "plugin-button": {
     en: "View list of all plugins",
-    "zh-CN": "查看所有插件列表"
+    "zh-CN": "查看所有插件列表",
   },
   "plugin-button": {
     en: "View list of all plugins",
-    "zh-CN": "查看所有插件列表"
+    "zh-CN": "查看所有插件列表",
   },
   "write-plugin": {
     en: "Learn how to write plugins",
@@ -85,38 +85,48 @@ module.exports = {
   },
   "redspot-patract-intro": {
     en: "Provide a JavaScript API to call contract",
-    "zh-CN": "提供一个访问合约的JavaScript API。"
+    "zh-CN": "提供一个访问合约的JavaScript API。",
   },
-  "details": {
+  details: {
     en: "Details",
-    "zh-CN": "详情"
+    "zh-CN": "详情",
   },
   "redspot-gas-report-intro": {
-    en: "Print out the GAS value consumed by each Message when running the test",
-    "zh-CN": "在运行测试的时候打印出每个 Message 所消耗的 GAS 值。"
+    en:
+      "Print out the GAS value consumed by each Message when running the test",
+    "zh-CN": "在运行测试的时候打印出每个 Message 所消耗的 GAS 值。",
   },
   "redspot-jupiter-intro": {
-    en: "Connect to the Jupiter test network and use its special features optimized for contract development.",
-    "zh-CN": "连接 Jupiter 测试网，使用其专为合约开发优化的特殊功能。"
+    en:
+      "Connect to the Jupiter test network and use its special features optimized for contract development.",
+    "zh-CN": "连接 Jupiter 测试网，使用其专为合约开发优化的特殊功能。",
   },
   "sample-code": {
     en: "Test case for the standard ERC20 contract",
-    "zh-CN": "标准 ERC20 的测试示例："
+    "zh-CN": "标准 ERC20 的测试示例：",
   },
   "more-examples": {
     en: "More examples",
-    "zh-CN": "查看更多示例"
+    "zh-CN": "查看更多示例",
   },
   "img-feature": {
     en: "/img/en/feature.png",
-    "zh-CN": "/img/zh-CN/feature.png"
+    "zh-CN": "/img/zh-CN/feature.png",
   },
   "img-sample-code": {
     en: "/img/en/sample-code.png",
-    "zh-CN": "/img/zh-CN/sample-code.png"
+    "zh-CN": "/img/zh-CN/sample-code.png",
   },
   "img-quick-start": {
     en: "/img/en/quick-start.png",
-    "zh-CN": "/img/zh-CN/quick-start.png"
-  }
+    "zh-CN": "/img/zh-CN/quick-start.png",
+  },
+  Plugins: {
+    en: "Plugins",
+    "zh-CN": "插件",
+  },
+  Documentation: {
+    en: "Documentation",
+    "zh-CN": "文档",
+  },
 };

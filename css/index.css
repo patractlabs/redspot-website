@@ -3,7 +3,9 @@
 }
 html,
 body {
-  font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans", "Noto Sans CJK Sc", "Microsoft YaHei", "Microsoft Jhenghei", sans-serif;
+  font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans",
+    "Noto Sans CJK Sc", "Microsoft YaHei", "Microsoft Jhenghei", sans-serif;
   font-size: 14px;
   padding: 0;
   margin: 0;
@@ -15,6 +17,23 @@ p:last-child {
 p,
 .tmpl-post li {
   line-height: 1.45;
+}
+
+a {
+  color: #363636;
+  font-weight: 600;
+}
+
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover,
+a.navbar-item.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+.navbar-link.is-active {
+  background-color: transparent;
+  color: inherit;
 }
 
 header:after {
@@ -32,7 +51,10 @@ table th {
 
 pre,
 code {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    "Courier New", Courier, monospace;
   line-height: 1.5;
 }
 pre {
@@ -51,7 +73,7 @@ pre {
   -ms-hyphens: none;
   hyphens: none;
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   background-color: #f6f6f6;
 }
 .highlight-line {
@@ -76,7 +98,7 @@ pre {
 }
 .highlight-line-active {
   background-color: #444;
-  background-color: hsla(0, 0%, 27%, .8);
+  background-color: hsla(0, 0%, 27%, 0.8);
 }
 .highlight-line-add {
   background-color: #45844b;
@@ -87,14 +109,14 @@ pre {
 
 /* Button */
 .button.is-danger {
-  background-color: #FF0049;
+  background-color: #ff0049;
 }
 
 .button.is-danger.is-outlined {
   position: relative;
   overflow: hidden;
-  color: #FF0049;
-  border: 1px dashed #FF0049;
+  color: #ff0049;
+  border: 1px dashed #ff0049;
   transition: all 0.2s ease, border 1ms ease;
   will-change: transform;
   transform: scale(0.999);
@@ -102,7 +124,7 @@ pre {
 }
 
 .button.is-danger.is-outlined:hover {
-  color: #FFFFFF;
+  color: #ffffff;
   background: transparent;
   border-color: transparent;
 }
@@ -112,7 +134,7 @@ pre {
   position: absolute;
   top: 0;
   height: 100%;
-  background-color: #FF0049;
+  background-color: #ff0049;
   transition: all 0.2s ease;
   will-change: transform;
   color: transparent;
@@ -163,31 +185,31 @@ pre {
 a.navbar-item {
   display: block;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   background: transparent;
   padding: 8px 20px;
 }
 
 .navbar-link {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .navbar-link:not(.is-arrowless)::after {
-  border-color: #FFFFFF;
+  border-color: #ffffff;
 }
 
 .navbar-item.has-dropdown:hover .navbar-link {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: transparent;
 }
 
 .navbar-dropdown a.navbar-item {
-  color: #4A4A4A !important;
+  color: #4a4a4a !important;
 }
 
 .navbar-start a.navbar-item:hover,
 .navbar-start a.navbar-item.is-active {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: transparent;
   font-weight: 600;
 }
@@ -200,7 +222,7 @@ a.navbar-item.is-active::after {
   margin-left: -20px;
   width: 100%;
   height: 5px;
-  background-color: #FF0049;
+  background-color: #ff0049;
   border-radius: 2.5px;
 }
 
@@ -218,7 +240,7 @@ a.navbar-item::before {
   background-color: #010101;
   height: 312px;
   padding-bottom: 30px;
-  background-image: url('/img/dot-background.png');
+  background-image: url("/img/dot-background.png");
   background-size: 1920px 312px;
   background-repeat: no-repeat;
   background-position: center;
@@ -229,14 +251,14 @@ a.navbar-item::before {
   visibility: hidden;
 }
 
-.content h1:hover .header-anchor, 
-.content h1:focus .header-anchor, 
-.content h2:hover .header-anchor, 
-.content h2:focus .header-anchor, 
-.content h3:hover .header-anchor, 
+.content h1:hover .header-anchor,
+.content h1:focus .header-anchor,
+.content h2:hover .header-anchor,
+.content h2:focus .header-anchor,
+.content h3:hover .header-anchor,
 .content h3:focus .header-anchor,
-.content h4:hover .header-anchor, 
-.content h4:focus .header-anchor, 
+.content h4:hover .header-anchor,
+.content h4:focus .header-anchor,
 .content h5:hover .header-anchor,
 .content h5:focus .header-anchor {
   visibility: visible;
@@ -259,11 +281,11 @@ a.navbar-item::before {
 }
 
 .toc > ol > li a {
-  color: #7A7A7A !important;
+  color: #7a7a7a !important;
 }
 
 .toc > ol > li a:hover {
-  color: #FF0049 !important;
+  color: #ff0049 !important;
 }
 
 .toc > ol > li > ol > li > ol {
@@ -303,15 +325,15 @@ a.navbar-item::before {
 .tmpl-home .header-hero-jupiter {
   width: 100%;
   height: 100%;
-  background-image: url('/img/jupiter.png');
+  background-image: url("/img/jupiter.png");
   background-size: 2000px 867px;
   background-position-x: center;
   background-position-y: -340px;
-} 
+}
 
 .tmpl-home .quick-start {
   padding: 32px 0 106px;
-  background-image: url('/img/grid-backgruond.png');
+  background-image: url("/img/grid-backgruond.png");
   background-size: 1280px 163px;
   background-repeat: no-repeat;
   background-position-x: center;

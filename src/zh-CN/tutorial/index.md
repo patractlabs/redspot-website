@@ -1,6 +1,6 @@
 ---
 layout: layouts/docs.njk
-title: Tutorial
+title: Redspot | 教程 
 templateClass: tmpl-docs
 eleventyNavigation:
   key: Tutorial
