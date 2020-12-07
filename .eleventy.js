@@ -6,6 +6,7 @@ const pluginTOC = require("eleventy-plugin-nesting-toc");
 const i18n = require('eleventy-plugin-i18n');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const markdownItAttrs = require('markdown-it-attrs');
 const translations = require('./src/_data/i18n');
 
 module.exports = function(eleventyConfig) {
@@ -14,7 +15,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(
 		pluginTOC,
 		{
-			tags: ["h2", "h3", "h4"],
+			tags: ["h1", "h2", "h3", "h4"],
 			wrapper: "div  ",
       wrapperClass: "toc",
       headingText: '',
@@ -67,6 +68,11 @@ module.exports = function(eleventyConfig) {
         String(title).trim().toLowerCase().replace(/\s+/g, "-"),
       );
     },
+  }).use(markdownItAttrs, {
+    // optional, these are default options
+    leftDelimiter: '{',
+    rightDelimiter: '}',
+    allowedAttributes: []  // empty array = all attributes are allowed
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 

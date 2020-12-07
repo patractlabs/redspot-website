@@ -8,4 +8,4 @@ eleventyNavigation:
   order: 4
 ---
 
-Tutorial
+{% include get-started.md %}
