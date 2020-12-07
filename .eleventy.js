@@ -51,8 +51,7 @@ module.exports = function(eleventyConfig) {
     return Math.min.apply(null, numbers);
   });
 
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("static");
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({

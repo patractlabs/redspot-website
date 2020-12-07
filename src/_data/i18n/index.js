@@ -16,7 +16,7 @@ module.exports = {
     "zh-CN": "教 程",
   },
   slogan: {
-    en: "Polkadot WASM Smart Contracts Development Scafold",
+    en: "Polkadot WASM Smart Contracts Development Scaffold",
     "zh-CN": "波卡 WASM 合约的开发脚手架",
   },
   intro: {
@@ -31,7 +31,7 @@ module.exports = {
   },
   "automatic-desc": {
     en:
-      "Redspot provides a Javascript-based automatic tesing environment ,which can make contract testing and debugging very quickly.",
+      "Redspot provides a JavaScript-based automatic testing environment ,which can make contract testing and debugging very quickly.",
     "zh-CN":
       "Redspot 提供了一个基于 JavaScript 的自动化测试环境，可以方便快速的测试和调试合约。",
   },
@@ -67,7 +67,7 @@ module.exports = {
   },
   "plugin-desc": {
     en:
-      "The flexibility and extensiblity of Redspot comes from its rich plug-in system. Developers can also easily developnew plugins and integrate them into their own contract development process.",
+      "The flexibility and extensibility of Redspot comes from its rich plug-in system. Developers can also easily developnew plugins and integrate them into their own contract development process.",
     "zh-CN":
       "Redspot 的灵活性和扩展性来源于其丰富的插件系统。 开发者还可以很容易地开发新的插件集成进来， 并应用到自己的合约开发流程中。",
   },
@@ -110,16 +110,16 @@ module.exports = {
     "zh-CN": "查看更多示例",
   },
   "img-feature": {
-    en: "/img/en/feature.png",
-    "zh-CN": "/img/zh-CN/feature.png",
+    en: "/static/img/en/feature.png",
+    "zh-CN": "/static/img/zh-CN/feature.png",
   },
   "img-sample-code": {
-    en: "/img/en/sample-code.png",
-    "zh-CN": "/img/zh-CN/sample-code.png",
+    en: "/static/img/en/sample-code.png",
+    "zh-CN": "/static/img/zh-CN/sample-code.png",
   },
   "img-quick-start": {
-    en: "/img/en/quick-start.png",
-    "zh-CN": "/img/zh-CN/quick-start.png",
+    en: "/static/img/en/quick-start.png",
+    "zh-CN": "/static/img/zh-CN/quick-start.png",
   },
   Plugins: {
     en: "Plugins",
