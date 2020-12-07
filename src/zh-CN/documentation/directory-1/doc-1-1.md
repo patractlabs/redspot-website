@@ -6,7 +6,7 @@
 $ npx redspot-new erc20
 ```
 
-(npx is a package runner tool that comes with npm 5.2+ and higher, it ensures that you always install the latest version)
+npx is a package runner tool that comes with npm 5.2+ and higher, it ensures that you always install the latest version)
 
 Redspot will create a directory called flipper inside the current folder.
 
