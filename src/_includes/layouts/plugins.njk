@@ -17,14 +17,14 @@ templateClass: tmpl-plugins
         {% if plugin.data.lang == locale %}
           <li class="column is-one-third">
             <div class="card">
-              <div class="card-content " style="height: 146px; position: relative;">
+              <div class="card-content " style="height: 170px; position: relative;">
                 <h4 class="title is-4">
-                  <a href="{{ plugin.url | url }}">{{ plugin.data.heading }}</a>
+                  <a href="/{{ locale }}/documentation#{{ plugin.data.heading }}">{{ plugin.data.heading }}</a>
                 </h4>
                 <p>{{ plugin.data.description }}</p>
               </div>
               <footer class="card-footer is-flex is-justify-content-center is-align-items-center has-background-white-ter">
-                <a class="button is-danger is-rounded my-4">{{ 'Documentation' | i18n }}</a>
+                <a class="button is-danger is-rounded my-4" href="/{{ locale }}/documentation#{{ plugin.data.heading | urlencode }}">{{ 'Documentation' | i18n }}</a>
               </footer>
             </div>
           </li>

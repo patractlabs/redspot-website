@@ -1,4 +1,4 @@
-## @redspot/jupiter
+## @redspot/gas-reporter
 
 A Mocha reporter for Redspot test suites. It can print gas usage per unit test.
 

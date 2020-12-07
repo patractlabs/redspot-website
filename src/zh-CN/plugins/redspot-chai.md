@@ -1,7 +1,7 @@
 ---
 title: redspot-chai
-heading: "@redspot/redspot-chai"
-description: 提供一组友好的Chai匹配器，使您的测试易于编写和阅读。
+heading: "@redspot/chai"
+description: 提供一组友好的 Chai 匹配器，使您的测试易于编写和阅读。
 tags: plugin
 lang: zh-CN
 eleventyNavigation:

@@ -53,7 +53,7 @@ module.exports = {
     en:
       "Redspot aims to provide development support for all WASM contract parachains in the Polkadot ecosystem, and will integrate multiple contract languages, such as: Ink!, Ask!, etc.",
     "zh-CN":
-      "Redspot 旨在为 Polkadot 生态的所有WASM合约平行链的提供开发支持，并将会集成多种合约语言，如: Ink!, Ask! 等",
+      "Redspot 旨在为 Polkadot 生态的所有 WASM 合约平行链的提供开发支持，并将会集成多种合约语言，如: Ink!, Ask! 等",
   },
   "ts-supported": {
     en: "TS supported",
@@ -63,7 +63,7 @@ module.exports = {
     en:
       "Redspot will provide a TypeScript-based template by default, and you can use TypeScript without any settings. It also cancels TypeScript's runtime type checking, even if you are not familiar with TypeScript, you will not encounter obstacles.",
     "zh-CN":
-      "Redspot默认将会提供一个基于TypeScript的模版，你无需任何设置即可使用TypeScript。它同时还也取消了TypeScript的运行时类型检测，即使你不熟悉TypeScript，也不会遇到阻碍。",
+      "Redspot 默认将会提供一个基于 TypeScript 的模版，你无需任何设置即可使用 TypeScript。它同时还也取消了 TypeScript 的运行时类型检测，即使你不熟悉 TypeScript，也不会遇到阻碍。",
   },
   "plugin-desc": {
     en:
@@ -85,7 +85,7 @@ module.exports = {
   },
   "redspot-patract-intro": {
     en: "Provide a JavaScript API to call contract",
-    "zh-CN": "提供一个访问合约的JavaScript API。",
+    "zh-CN": "提供一个访问合约的 JavaScript API。",
   },
   details: {
     en: "Details",
@@ -120,10 +120,6 @@ module.exports = {
   "img-quick-start": {
     en: "/static/img/en/quick-start.png",
     "zh-CN": "/static/img/zh-CN/quick-start.png",
-  },
-  Plugins: {
-    en: "Plugins",
-    "zh-CN": "插件",
   },
   Documentation: {
     en: "Documentation",
