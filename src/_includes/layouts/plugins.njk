@@ -14,19 +14,21 @@ templateClass: tmpl-plugins
 
   <ul class="columns is-multiline is-variable is-3">
       {% for plugin in pluginlist %}
-        <li class="column is-one-third">
-          <div class="card">
-            <div class="card-content " style="height: 146px; position: relative;">
-              <h4 class="title is-4">
-                <a href="{{ plugin.url | url }}">{{ plugin.data.heading }}</a>
-              </h4>
-              <p>{{ plugin.data.description }}</p>
+        {% if plugin.data.lang == locale %}
+          <li class="column is-one-third">
+            <div class="card">
+              <div class="card-content " style="height: 146px; position: relative;">
+                <h4 class="title is-4">
+                  <a href="{{ plugin.url | url }}">{{ plugin.data.heading }}</a>
+                </h4>
+                <p>{{ plugin.data.description }}</p>
+              </div>
+              <footer class="card-footer is-flex is-justify-content-center is-align-items-center has-background-white-ter">
+                <a class="button is-danger is-rounded my-4">{{ 'Documentation' | i18n }}</a>
+              </footer>
             </div>
-            <footer class="card-footer is-flex is-justify-content-center is-align-items-center has-background-white-ter">
-              <a class="button is-danger is-rounded my-4">{{ 'Documentation' | i18n }}</a>
-            </footer>
-          </div>
-        </li>
+          </li>
+        {% endif %}
       {% endfor %}
       
   </ul>
