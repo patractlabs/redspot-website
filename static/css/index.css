@@ -11,7 +11,13 @@ body {
   margin: 0;
   color: #24292e;
   min-width: 900px;
-  overflow-x: auto;
+  
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    overflow-x: auto;
+  }
 }
 
 p:last-child {
@@ -389,7 +395,7 @@ a.navbar-item {
 
 .tmpl-home .header {
   height: 471px;
-  background-image: url(/static/header.png);
+  background-image: url(/static/img/header.png);
   background-size: 1311px 1145px;
   background-position-x: center;
   background-position-y: -600px;
