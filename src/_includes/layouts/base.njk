@@ -19,8 +19,7 @@
     <nav class="navbar is-spaced has-text-white{% if page.url.split('/').slice(2).join('/') == '' %} is-shadowed{% endif %}" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="{{ '/' + locale + '/' | url }}">
-          </a>
+          <a class="navbar-item" href="{{ '/' + locale + '/' | url }}"></a>
 
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -38,13 +37,13 @@
             {%- endfor %}
             <a class="navbar-item" href="https://github.com/patractlabs/redspot" target="_blank" data-content="Github">
               Github
-            </a>   
-            <a class="navbar-item" href="https://patract.io/" target="_blank" data-content="Patract Hub">
-              Patract Hub
-            </a>   
+            </a>
           </div>
 
           <div class="navbar-end">
+            <a class="navbar-item" href="https://patract.io/" target="_blank" data-content="Patract Hub">
+              Patract Hub
+            </a>
             {% include 'components/language-selector.njk' %}
           </div>
         </div>

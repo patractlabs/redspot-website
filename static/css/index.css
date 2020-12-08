@@ -33,18 +33,6 @@ a {
   font-weight: 600;
 }
 
-/* a.navbar-item:focus,
-a.navbar-item:focus-within,
-a.navbar-item:hover,
-a.navbar-item.is-active,
-.navbar-link:focus,
-.navbar-link:focus-within,
-.navbar-link:hover,
-.navbar-link.is-active {
-  background-color: transparent;
-  color: inherit;
-} */
-
 header:after {
   content: "";
   display: table;
@@ -248,6 +236,7 @@ a.navbar-item {
     text-align: center;
     background: transparent;
     padding: 8px 20px;
+    transition: all 0s;
   }
 
   a.navbar-item.is-active::after {
@@ -271,9 +260,12 @@ a.navbar-item {
     visibility: hidden;
   }
 
-  .navbar-start a.navbar-item:hover,
-  .navbar-start a.navbar-item:focus,
-  .navbar-start a.navbar-item.is-active {
+  .navbar-start > a.navbar-item:hover,
+  .navbar-start > a.navbar-item:focus,
+  .navbar-start > a.navbar-item.is-active,
+  .navbar-end > a.navbar-item:hover,
+  .navbar-end > a.navbar-item:focus,
+  .navbar-end > a.navbar-item.is-active {
     color: #ffffff;
     background-color: transparent;
     font-weight: 500;
