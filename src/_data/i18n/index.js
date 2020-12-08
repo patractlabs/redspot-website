@@ -19,6 +19,12 @@ module.exports = {
     en: "Polkadot WASM Smart Contracts Development Scaffold",
     "zh-CN": "波卡 WASM 合约的开发脚手架",
   },
+  introHeader: {
+    en:
+      "Polkadot WASM Smart Contracts Development Scafold",
+    "zh-CN":
+      "波卡 WASM 合约的开发脚手架",
+  },
   intro: {
     en:
       "Redspot is the most advanced WASM smart contract development, testing and debugging framework. It can simplify the development workflow and connects with other tools as the core of Patract Hub.",
