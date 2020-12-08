@@ -368,7 +368,7 @@ a.navbar-item::before {
 
 .tmpl-home .header {
   height: 471px;
-  background-image: url(/static/header.png);
+  background-image: url(/static/img/header.png);
   background-size: 1311px 1145px;
   background-position-x: center;
   background-position-y: -600px;
