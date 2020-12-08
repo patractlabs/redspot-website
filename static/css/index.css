@@ -192,7 +192,11 @@ a.navbar-item {
 }
 
 .navbar-brand .navbar-item {
-  padding: 0;
+  position: relative;
+  display: inline-block;
+  width: 144px;
+  height: 52px;
+  left: 15px;
 }
 
 .navbar-brand {
@@ -229,6 +233,10 @@ a.navbar-item {
     height: 34px;
     margin-right: 36px;
     background-position: center;
+  }
+
+  .navbar-brand .navbar-item {
+    left: 0;
   }
 
   a.navbar-item {
@@ -432,6 +440,7 @@ a.navbar-item {
 }
 
 .tmpl-docs .content {
+  width: 90%;
   max-width: 960px;
   margin: auto;
 }
@@ -452,6 +461,19 @@ a.navbar-item {
   overflow-x: hidden;
   top: 74px;
   border-right: 1px solid #efefef;
+}
+
+@media screen and (max-width: 1023px) {
+  .tmpl-docs .menu {
+    width: 30%;
+    height: calc(100% - 53px);
+    top: 53px;
+  }
+
+  .tmpl-docs .content-container {
+    width: 70%;
+    left: 30%;
+  }
 }
 
 /* Plugin */
