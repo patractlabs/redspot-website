@@ -211,6 +211,10 @@ a.navbar-item {
     background-color: rgb(38, 38, 38);
   }
 
+  .navbar-brand {
+    padding: 8px 0;
+  }
+
   a.navbar-item.is-active,
   a.navbar-item:hover, 
   a.navbar-item:focus {
@@ -429,18 +433,20 @@ a.navbar-item {
 }
 
 .tmpl-docs {
-  margin-top: 116px;
+  margin-top: 68px;
 }
 
 .tmpl-docs .content-container {
   position: relative;
   width: calc(100vw - 360px);
+  padding-top: 10px;
   padding-bottom: 32px;
   left: 360px;
 }
 
 .tmpl-docs .content {
-  width: 90%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   max-width: 960px;
   margin: auto;
 }
@@ -478,9 +484,20 @@ a.navbar-item {
 
 /* Plugin */
 .tmpl-plugins {
-  min-height: calc(100vh - 74px);
+  min-height: calc(100vh - 68px);
   position: relative;
-  top: 74px;
+  top: 68px;
+}
+
+.tmpl-plugins .container {
+  padding-top: 25px;
+}
+
+@media screen and (max-width: 1023px) {
+  .tmpl-plugins .container  {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .tmpl-404 {
