@@ -121,6 +121,10 @@ module.exports = {
     en: "/static/img/en/quick-start.png",
     "zh-CN": "/static/img/zh-CN/quick-start.png",
   },
+  "img-plugins": {
+    en: "/static/img/en/plugins.png",
+    "zh-CN": "/static/img/zh-CN/plugins.png",
+  },
   Documentation: {
     en: "Documentation",
     "zh-CN": "文档",

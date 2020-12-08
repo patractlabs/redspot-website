@@ -45,7 +45,7 @@ templateClass: tmpl-home
   </div>
   <div class="is-flex is-justify-content-space-evenly py-6" style="width: 100%; max-width: 1040px; background: #121212; border-radius: 4px; margin-top: 56px;">
     <div class="is-flex is-flex-direction-column is-align-items-center" style="width: 405px;">
-      <img src="/static/img/plugin.png" width="256" alt="plugin"/>
+      <img src={{ 'img-plugins' | i18n }} width="256" alt="plugin"/>
       <p class="has-text-white has-text-centered mt-5">{{ 'plugin-desc' | i18n }}</p>
       <img class="mt-5"src="/static/img/plugin-illustration.png" width="256" alt="plugin illustratio"/>
       <a class="button is-danger is-outlined is-rounded is-medium mt-6" href="/{{ locale }}/plugins">
