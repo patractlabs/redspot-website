@@ -260,15 +260,20 @@ a.navbar-item {
     visibility: hidden;
   }
 
+  .navbar-start > a.navbar-item:active,
+  .navbar-start > a.navbar-item:visited,
   .navbar-start > a.navbar-item:hover,
   .navbar-start > a.navbar-item:focus,
   .navbar-start > a.navbar-item.is-active,
+  .navbar-end > a.navbar-item:active,
+  .navbar-end > a.navbar-item:visited,
   .navbar-end > a.navbar-item:hover,
   .navbar-end > a.navbar-item:focus,
   .navbar-end > a.navbar-item.is-active {
     color: #ffffff;
     background-color: transparent;
     font-weight: 500;
+    outline: none;
   }
 
   .navbar-link {
