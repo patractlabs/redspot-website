@@ -11,7 +11,13 @@ body {
   margin: 0;
   color: #24292e;
   min-width: 900px;
-  overflow-x: auto;
+  
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    overflow-x: auto;
+  }
 }
 
 p:last-child {
