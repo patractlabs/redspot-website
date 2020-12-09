@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/static/css/bulma-1.css' | url }}">
-    <link rel="stylesheet" href="{{ '/static/css/index-1.css' | url }}">
+    <link rel="stylesheet" href="{{ '/static/css/bulma-2.css' | url }}">
+    <link rel="stylesheet" href="{{ '/static/css/index-2.css' | url }}">
     <link rel="stylesheet" href="{{ '/static/css/prism-base16-monokai.dark.css' | url }}">
     <link rel="icon" type="image/png" sizes="96x96" href="/static/img/redspot.png">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
     <script src="https://kit.fontawesome.com/52f9bcef72.js" crossorigin="anonymous"></script>
 
-    <script src="{{ '/static/js/language-1.js' }}"></script>
+    <script src="{{ '/static/js/language-2.js' }}"></script>
   </head>
   <body>
     <nav class="navbar is-spaced has-text-white{% if page.url.split('/').slice(2).join('/') == '' %} is-shadowed{% endif %}" role="navigation" aria-label="main navigation">
@@ -56,7 +56,7 @@
 
     {% block footer %}{% endblock %}
 
-    <script async defer src="{{ '/static/js/menu-1.js' }}"></script>
-    <script async defer src="{{ '/static/js/nav-1.js' }}"></script>
+    <script async defer src="{{ '/static/js/menu-2.js' }}"></script>
+    <script async defer src="{{ '/static/js/nav-2.js' }}"></script>
   </body>
 </html>
