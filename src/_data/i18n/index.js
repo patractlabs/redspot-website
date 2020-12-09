@@ -37,7 +37,7 @@ module.exports = {
   },
   "automatic-desc": {
     en:
-      "Redspot provides a JavaScript-based automatic testing environment ,which can make contract testing and debugging very quickly.",
+      "Redspot provides a JavaScript-based automatic testing environment, which can make contract testing and debugging very quickly.",
     "zh-CN":
       "Redspot 提供了一个基于 JavaScript 的自动化测试环境，可以方便快速的测试和调试合约。",
   },
