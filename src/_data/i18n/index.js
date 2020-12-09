@@ -21,7 +21,7 @@ module.exports = {
   },
   introHeader: {
     en:
-      "Polkadot WASM Smart Contracts Development Scafold",
+      "Polkadot WASM Smart Contracts Development Scaffold",
     "zh-CN":
       "波卡 WASM 合约的开发脚手架",
   },
