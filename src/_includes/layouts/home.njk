@@ -5,10 +5,10 @@ templateClass: tmpl-home
 
 <header class="header has-text-white">
   <div class="header-hero-jupiter is-flex is-flex-direction-column is-justify-content-flex-start is-align-items-center">
-    <h3 class="has-text-centered title is-6 mb-1 has-text-white" style="margin-top: 190px;"></h3>
-    <div style="font-weight: 600;">{{ 'introHeader' | i18n }}</div>
-    <img width="580" src="/static/img/redspot.svg" alt="redspot logo"/>
-    <div class="block has-text-centered mt-6" style="width: 582px;">
+    <h3 class="has-text-centered title is-6 mb-1 has-text-white" style="margin-top: 190px;z-index:1;"></h3>
+    <img width="580" style="z-index:1;" src="/static/img/redspot.svg" alt="redspot logo"/>
+    <div style="font-weight: 600;font-size: 30px;color:#FF0049;line-height:1;z-index:1;">{{ 'introHeader' | i18n }}</div>
+    <div class="block has-text-centered" style="margin-top: 16px;width: 582px;z-index:1;">
       {{ 'intro' | i18n }}
     </div>
   </div>
@@ -91,7 +91,10 @@ templateClass: tmpl-home
 
 <section class="quick-start is-flex is-flex-direction-column is-align-items-center has-text-white">
   <img src="{{ 'img-quick-start' | i18n }}" width="365" alt="quick-start"/>
-  <img src="/static/img/quick-start-illustration.png" width="459" alt="quick-start illustration" style="margin-top: 32px;"/>
+  <div class="quick-start-img-container">
+    <img class="quick-start-img" src="/static/img/quick-start-illustration.svg" width="459" alt="quick-start illustration" style="margin-top: 32px;"/>
+    <div class="quick-start-img-tip">npx redspot-new erc20</div>
+  </div> 
 </section>
 
 {% block footer %}
