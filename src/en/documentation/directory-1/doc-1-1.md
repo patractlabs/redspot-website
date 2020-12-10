@@ -105,32 +105,27 @@ The sample project comes with these tests that use `@redspot/patract` and `@reds
 ```javascript
 import BN from 'bn.js';
 import { expect } from 'chai';
-import { patract } from 'redspot';
+import { patract, network, artifacts } from 'redspot';
 
-const {
-  disconnect,
-  getContractFactory,
-  getRandomSigner,
-  getSigners,
-  getAbi,
-  api
-} = patract;
+const { getContractFactory, getRandomSigner } = patract;
+
+const { api, getSigners } = network;
 
 describe('ERC20', () => {
   after(() => {
-    return disconnect();
+    return api.disconnect();
   });
 
   async function setup() {
     const one = new BN(10).pow(new BN(api.registry.chainDecimals));
     const signers = await getSigners();
     const Alice = signers[0];
-    const sender = await getRandomSigner(Alice, one.muln(10));
+    const sender = await getRandomSigner(Alice, one.muln(100));
     const contractFactory = await getContractFactory('erc20', sender);
     const contract = await contractFactory.deploy('new', '1000');
-    const abi = getAbi('erc20');
+    const abi = artifacts.readAbi('erc20');
     const receiver = await getRandomSigner();
-
+    
     return { sender, contractFactory, contract, abi, receiver, Alice, one };
   }
 
@@ -155,7 +150,7 @@ describe('ERC20', () => {
   it('Transfer emits event', async () => {
     const { contract, sender, receiver } = await setup();
 
-    expect(contract.tx.transfer(receiver.address, 7))
+    await expect(contract.tx.transfer(receiver.address, 7))
       .to.emit(contract, 'Transfer')
       .withArgs(sender.address, receiver.address, 7);
   });
@@ -181,6 +176,7 @@ describe('ERC20', () => {
     ).to.not.emit(contract, 'Transfer');
   });
 });
+
 ```
 
 You can run your tests with `npx redspot test`
