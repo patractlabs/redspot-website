@@ -215,40 +215,37 @@ inputData:  0xd0fae3a09da4d7bfa17ea2d60835ca3c5fac7ea6ca6e18f32f842562d69adf7b7e
 To deploy the contract we will use a Redspot script. Inside scripts/ you will find deploy.ts with the following code:
 
 ```javascript
-import { patract, network } from "redspot";
+import { patract, network } from 'redspot';
 
-const { getContractFactory, disconnect } = patract!;
+const { getContractFactory } = patract;
+const { createSigner, keyring, api } = network;
 
 const uri =
-  "bottom drive obey lake curtain smoke basket hold race lonely fit walk//Alice";
-
-const { connect, api } = patract!;
+  'bottom drive obey lake curtain smoke basket hold race lonely fit walk//Alice';
 
 async function run() {
-  await connect();
+  await api.isReady;
 
-  const signer = network.provider.createSigner(
-    network.provider.keyring.createFromUri(uri)
-  );
-
-  const contractFactory = await getContractFactory("erc20", signer);
+  const signer = createSigner(keyring.createFromUri(uri));
+  const contractFactory = await getContractFactory('erc20', signer);
 
   const balance = await api.query.system.account(signer.address);
 
-  console.log("Balance: ", balance.toHuman());
+  console.log('Balance: ', balance.toHuman());
 
-  const contract = await contractFactory.deployed("new", "1000000", {
-    gasLimit: "200000000000",
-    value: "10000000000000000",
+  const contract = await contractFactory.deployed('new', '1000000', {
+    gasLimit: '200000000000',
+    value: '10000000000000000',
+    salt: '12312'
   });
 
-  console.log("");
+  console.log('');
   console.log(
-    "Deploy successfully. The contract address: ",
+    'Deploy successfully. The contract address: ',
     contract.address.toString()
   );
 
-  disconnect();
+  api.disconnect();
 }
 
 run().catch((err) => {
