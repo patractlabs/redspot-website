@@ -12,15 +12,13 @@ We will cover:
 - Deploy our contract on a local jupiter node.
 - Using redspot to interact with our contracts
 
-
-
 ## Setup
 
 To follow this tutorial, you will need to set up some stuff on your computer.
 
 ### Installing Node.js
 
-We require node `>=12.0`,  if not, you can go to the nodejs website and find out how to install or upgrade.
+We require node `>=12.0`, if not, you can go to the nodejs website and find out how to install or upgrade.
 
 Or we recommend that you install Node using [nvm](https://github.com/nvm-sh/nvm). Windows users can use [nvm-windows](https://github.com/coreybutler/nvm-windows) instead.
 
@@ -64,11 +62,9 @@ $ rustup component add rust-src --toolchain nightly
 $ cargo install cargo-contract --vers 0.7.1 --force
 ```
 
-
-
 ## Creating a new Redspot project
 
-We'll install Redspot using the `npx` . 
+We'll install Redspot using the `npx` .
 
 Open a new terminal and run these commands:
 
@@ -76,9 +72,7 @@ Open a new terminal and run these commands:
 npx redspot-new erc20
 ```
 
-This will create a  `erc20` directory in your current directory.
-
-
+This will create a `erc20` directory in your current directory.
 
 ### Redspot's architecture
 
@@ -100,15 +94,15 @@ yarn add @redspot/patract @redspot/chai
 
 Add a few lines to your `redspot.config.js` so that it looks like this:
 
- ```javascript
+```javascript
 import { RedspotUserConfig } from 'redspot/types';
 import '@redspot/patract';
 import '@redspot/chai';
 
 export default {
-  ...
+ ...
 } as RedspotUserConfig;
- ```
+```
 
 ## Writing and compiling smart contracts
 
@@ -122,7 +116,7 @@ We use [ink!](https://substrate.dev/substrate-contracts-workshop/#/0/introductio
 
 #### Compiling contracts
 
-First, make sure you have cargo-contract v0.7.1 installed. 
+First, make sure you have cargo-contract v0.7.1 installed.
 
 To compile the contract run `npx redspot compile` in your terminal. The `compile` task is one of the built-in tasks.
 
@@ -158,7 +152,7 @@ Before testing, we need to start a chain of nodes. If you use jupiter, you can s
 $ jupiter-dev --dev --execution=Native --tmp
 ```
 
-By default, a 9944 rpc link port is opened. The same redspot will default to `ws:///127.0.0.1:9944`. 
+By default, a 9944 rpc link port is opened. The same redspot will default to `ws:///127.0.0.1:9944`.
 
 #### Writing tests
 
@@ -186,7 +180,6 @@ describe("ERC20", () => {
     expect(result.output).to.equal(1000);
   });
 });
-
 ```
 
 On your terminal run `npx redspot test`. You should see the following output:
@@ -200,7 +193,61 @@ $ npx redspot test
   1 passing (657ms)
 ```
 
-This means the test passed. Let's now explain each line:
+This means the test passed.
+
+*If you encounter a problem like this while testing:*
+
+![](https://user-images.githubusercontent.com/69485494/102412614-966da580-4058-11eb-8d98-1b173b1ae425.png)
+
+This is types not set properly. You should add types to `redspot.config.ts` :
+
+```javascript
+// redspot.config.ts
+
+...
+export default {
+  networks: {
+
+    development: {
+      ...
+      types: {
+        Address: 'AccountId',
+        LookupSource: 'AccountId'
+      },
+      ...
+    },
+    ...
+  },
+  ...
+} as RedspotUserConfig;
+
+```
+
+If you are using a newer version of the chain, you should use this:
+
+```javascript
+// redspot.config.ts
+
+...
+export default {
+  networks: {
+    // default network
+    development: {
+      ...
+      types: {
+        Address: 'GenericMultiAddress',
+        LookupSource: 'GenericMultiAddress'
+      },
+      ...
+    },
+    ...
+  },
+  ...
+} as RedspotUserConfig;
+
+```
+
+Let's explain each line of the test case:
 
 ```javascript
 const signers = await getSigners();
@@ -215,21 +262,19 @@ const contractFactory = await patract.getContractFactory("erc20", Alice);
 
 We get the contract factory through the `getContractFactory` function provided by the `@redspot/patract` plugin.
 
-Calling `deploy()` on a `ContractFactory` will start the deployment, and return a `Promise` that resolves to a `Contract`. This is the object that has a method for each of your  contract functions.
+Calling `deploy()` on a `ContractFactory` will start the deployment, and return a `Promise` that resolves to a `Contract`. This is the object that has a method for each of your contract functions.
 
 ```javascript
 const result = await contract.query.balanceOf(Alice.address);
 ```
 
-Once the contract is deployed, we can call our contract methods on `erc20`  and use them to get the balance of the owner account by calling `balanceOf()`.
+Once the contract is deployed, we can call our contract methods on `erc20` and use them to get the balance of the owner account by calling `balanceOf()`.
 
 ```javascript
 expect(result.output).to.equal(1000);
 ```
 
 `balanceOf()` should return the entire supply amount. It is 1000.
-
-
 
 ### Using a different account
 
@@ -247,13 +292,11 @@ it("Connect Bob", async () => {
 
   await contract.connect(Bob).tx.transfer(Alice.address, 6);
 
-  const balance = await contract.query.balanceOf(Bob.address)
+  const balance = await contract.query.balanceOf(Bob.address);
 
   expect(balance.output).to.equal(1);
 });
 ```
-
-
 
 ### Set gaslimit and value
 
@@ -266,50 +309,46 @@ it("Connect Bob", async () => {
   const Bob = signers[1];
   const contractFactory = await getContractFactory("erc20", Alice);
   const contract = await contractFactory.deploy("new", "1000", {
-      gasLimit: 10000000000000n,
-      value: 10000000000000n
+    gasLimit: 10000000000000n,
+    value: 10000000000000n,
   });
 
   await contract.tx.transfer(Bob.address, 7, {
-      gasLimit: 10000000000000n,
-      value: 10000000000000n
+    gasLimit: 10000000000000n,
+    value: 10000000000000n,
   });
 
   await tx.transfer(Alice.address, 6, {
-      gasLimit: 10000000000000n,
-      value: 10000000000000n,
-     signer: Bob
+    gasLimit: 10000000000000n,
+    value: 10000000000000n,
+    signer: Bob,
   });
 
-  const balance = await contract.query.balanceOf(Bob.address)
+  const balance = await contract.query.balanceOf(Bob.address);
 
   expect(balance.output).to.equal(1);
 });
 ```
 
-
-
 ### Full coverage
 
 Now that we've covered the basics you'll need for testing your contracts, here's a full test suite for the token with a lot of additional information about how to structure your tests. We recommend reading through.
 
-
-
 ```javascript
-import BN from 'bn.js';
-import { expect } from 'chai';
-import { patract, network, artifacts } from 'redspot';
+import BN from "bn.js";
+import { expect } from "chai";
+import { patract, network, artifacts } from "redspot";
 
-// patract from @patract/redspot 
+// patract from @patract/redspot
 const { getContractFactory, getRandomSigner } = patract;
 
 const { api, getSigners } = network;
 
-describe('ERC20', () => {
+describe("ERC20", () => {
   after(() => {
     return api.disconnect();
   });
- 
+
   // setup is used for some initial configuration to ensure that the state of the contract is the same each time it is invoked.
   async function setup() {
     // one token
@@ -318,21 +357,21 @@ describe('ERC20', () => {
     const signers = await getSigners();
     const Alice = signers[0];
     const sender = await getRandomSigner(Alice, one.muln(100));
-    const contractFactory = await getContractFactory('erc20', sender);
-    const contract = await contractFactory.deploy('new', '1000');
-    const abi = artifacts.readAbi('erc20');
+    const contractFactory = await getContractFactory("erc20", sender);
+    const contract = await contractFactory.deploy("new", "1000");
+    const abi = artifacts.readAbi("erc20");
     const receiver = await getRandomSigner();
 
     return { sender, contractFactory, contract, abi, receiver, Alice, one };
   }
 
-  it('Assigns initial balance', async () => {
+  it("Assigns initial balance", async () => {
     const { contract, sender } = await setup();
     const result = await contract.query.balanceOf(sender.address);
     expect(result.output).to.equal(1000);
   });
 
-  it('Transfer adds amount to destination account', async () => {
+  it("Transfer adds amount to destination account", async () => {
     const { contract, receiver } = await setup();
 
     await expect(() =>
@@ -344,74 +383,73 @@ describe('ERC20', () => {
     ).to.changeTokenBalances(contract, [contract.signer, receiver], [-7, 7]);
   });
 
-  it('Transfer emits event', async () => {
+  it("Transfer emits event", async () => {
     const { contract, sender, receiver } = await setup();
 
     await expect(contract.tx.transfer(receiver.address, 7))
-      .to.emit(contract, 'Transfer')
+      .to.emit(contract, "Transfer")
       .withArgs(sender.address, receiver.address, 7);
   });
 
-  it('Can not transfer above the amount', async () => {
+  it("Can not transfer above the amount", async () => {
     const { contract, receiver } = await setup();
 
     await expect(contract.tx.transfer(receiver.address, 1007)).to.not.emit(
       contract,
-      'Transfer'
+      "Transfer"
     );
   });
 
-  it('Can not transfer from empty account', async () => {
+  it("Can not transfer from empty account", async () => {
     const { contract, Alice, one, sender } = await setup();
 
     const emptyAccount = await getRandomSigner(Alice, one.muln(10));
 
     await expect(
       contract.tx.transfer(sender.address, 7, {
-        signer: emptyAccount
+        signer: emptyAccount,
       })
-    ).to.not.emit(contract, 'Transfer');
+    ).to.not.emit(contract, "Transfer");
   });
 });
-
 ```
 
 This is what the output of `npx redspot test` should look like against the full test suite:
 
 ### Deploying to a live network
 
-Once you're ready to share your dApp with other people what you may want to do is deploy to a live network. 
+Once you're ready to share your dApp with other people what you may want to do is deploy to a live network.
 
 Let's create a new directory `scripts` inside the project root's directory, and paste the following into a `deploy.js` file:
 
 ```javascript
-import { patract, network } from 'redspot';
+import { patract, network } from "redspot";
 
 const { getContractFactory } = patract;
 const { createSigner, keyring, api } = network;
 
 const uri =
-  'bottom drive obey lake curtain smoke basket hold race lonely fit walk//Alice';
+  "bottom drive obey lake curtain smoke basket hold race lonely fit walk//Alice";
 
 async function run() {
   await api.isReady;
 
   const signer = createSigner(keyring.createFromUri(uri));
-  const contractFactory = await getContractFactory('erc20', signer);
+  const contractFactory = await getContractFactory("erc20", signer);
 
   const balance = await api.query.system.account(signer.address);
 
-  console.log('Balance: ', balance.toHuman());
+  console.log("Balance: ", balance.toHuman());
 
-  const contract = await contractFactory.deployed('new', '1000000', {
-    gasLimit: '200000000000',
-    value: '10000000000000000',
-    salt: '12312'
+  const contract = await contractFactory.deployed("new", "1000000", {
+    gasLimit: "200000000000",
+    value: "10000000000000000",
+    salt: "12312",
   });
 
-  console.log('');
+  console.log("");
   console.log(
-    'Deploy successfully. The contract address: ',
+    "Deploy successfully. The contract address: ",
     contract.address.toString()
   );
 
@@ -421,7 +459,6 @@ async function run() {
 run().catch((err) => {
   console.log(err);
 });
-
 ```
 
 To indicate Redspot to connect to a specific Substrate network when running any tasks, you can use the `REDSPOT_NETWORK` parameter. Like this:
