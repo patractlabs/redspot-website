@@ -195,7 +195,7 @@ $ npx redspot test
 
 This means the test passed.
 
-*If you encounter a problem like this while testing:*
+**If you encounter a problem like this while testing:**
 
 ![](https://user-images.githubusercontent.com/69485494/102412614-966da580-4058-11eb-8d98-1b173b1ae425.png)
 
