@@ -59,7 +59,7 @@ You can install the utility using Cargo with:
 
 ```bash
 $ rustup component add rust-src --toolchain nightly
-$ cargo install cargo-contract --vers 0.7.1 --force
+$ cargo install cargo-contract --force --locked
 ```
 
 ## Creating a new Redspot project
