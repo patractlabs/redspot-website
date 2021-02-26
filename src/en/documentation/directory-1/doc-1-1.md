@@ -82,7 +82,7 @@ Prerequisites:
 - rust nightly: https://rust-lang.github.io/rustup/installation/index.html#installing-nightly
 - rust-src: `rustup component add rust-src --toolchain nightly`
 - wasm-opt: https://github.com/WebAssembly/binaryen#tools
-- cargo contract v0.7.1: `cargo install --git https://github.com/paritytech/cargo-contract cargo-contract --force`
+- cargo contract: `cargo install cargo-contract --force --locked`
 
 You can specify the contract name to compile, by default it compiles all contracts in the workspace.
 
