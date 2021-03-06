@@ -9,7 +9,7 @@ We will cover:
 - Install the required components on your computer
 - Start a new project with redspot
 - Create and test our contracts
-- Deploy our contract on a local jupiter node.
+- Deploy our contract on a local patract node.
 - Using redspot to interact with our contracts
 
 ## Setup
@@ -31,24 +31,24 @@ rustup component add rust-src --toolchain nightly
 rustup target add wasm32-unknown-unknown --toolchain nightly
 ```
 
-### Installing The Jupiter Node
+### Installing The Patract Node
 
-We use [Jupiter](https://github.com/patractlabs/jupiter) as our contract test chain. It has some very convenient optimizations for contracts, such as reducing out-of-block time. To install Jupiter:
+We use [Patract](https://github.com/patractlabs/patract) as our contract test chain. It has some very convenient optimizations for contracts, such as reducing out-of-block time. To install Patract:
 
 ```
-$ cargo install jupiter-dev --git https://github.com/patractlabs/jupiter --locked --force
+$ cargo install patract-dev --git https://github.com/patractlabs/patract --locked --force
 ```
 
 Run a local node:
 
 ```
-$ jupiter-dev --dev --execution=Native --tmp
+$ patract-dev --dev --execution=Native --tmp
 ```
 
 Alternatively, you can also use Canvas Node:
 
 ```
-$ cargo install canvas-node --git https://github.com/paritytech/canvas-node.git --tag v0.1.4 --force --locked
+$ cargo install canvas-node --git https://github.com/paritytech/canvas-node.git --force --locked
 ```
 
 ### Installing cargo-contract
@@ -146,10 +146,10 @@ By default, redspot uses mocha as the testing framework.
 
 #### Start node
 
-Before testing, we need to start a chain of nodes. If you use jupiter, you can start it like this:
+Before testing, we need to start a chain of nodes. If you use patract, you can start it like this:
 
 ```
-$ jupiter-dev --dev --execution=Native --tmp
+$ patract-dev --dev --execution=Native --tmp
 ```
 
 By default, a 9944 rpc link port is opened. The same redspot will default to `ws:///127.0.0.1:9944`.
