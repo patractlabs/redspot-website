@@ -31,18 +31,18 @@ rustup component add rust-src --toolchain nightly
 rustup target add wasm32-unknown-unknown --toolchain nightly
 ```
 
-### Installing The Patract Node
+### Installing The Jupiter Node
 
-We use [Patract](https://github.com/patractlabs/patract) as our contract test chain. It has some very convenient optimizations for contracts, such as reducing out-of-block time. To install Patract:
+We use [Jupiter](https://github.com/patractlabs/jupiter) as our contract test chain. It has some very convenient optimizations for contracts, such as reducing out-of-block time. To install Patract:
 
 ```
-$ cargo install patract-dev --git https://github.com/patractlabs/patract --locked --force
+$ cargo install jupiter-dev --git https://github.com/patractlabs/jupiter --locked --force
 ```
 
 Run a local node:
 
 ```
-$ patract-dev --dev --execution=Native --tmp
+$ jupiter-dev --dev --execution=Native --tmp
 ```
 
 Alternatively, you can also use Canvas Node:
@@ -149,7 +149,7 @@ By default, redspot uses mocha as the testing framework.
 Before testing, we need to start a chain of nodes. If you use Patract, you can start it like this:
 
 ```
-$ patract-dev --dev --execution=Native --tmp
+$ jupiter-dev --dev --execution=Native --tmp
 ```
 
 By default, a 9944 rpc link port is opened. The same redspot will default to `ws:///127.0.0.1:9944`.
