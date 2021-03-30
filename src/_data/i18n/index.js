@@ -27,9 +27,9 @@ module.exports = {
   },
   intro: {
     en:
-      "Redspot is the most advanced WASM smart contract development, testing and debugging framework. It can simplify the development workflow and connects with other tools as the core of Patract Hub.",
+      "Redspot is the most advanced WASM smart contract development, testing and debugging framework. ",
     "zh-CN":
-      "Redspot 是 Substrate 上最先进的 WASM 智能合约开发、 测试和调试框架，可以简化合约开发流程， 并作为 Patract Hub 的核心连接其他工具。",
+      "Redspot 是 Substrate 上最先进的 WASM 智能合约开发、 测试和调试框架。",
   },
   automatic: {
     en: "Automatic",
