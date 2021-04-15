@@ -3,7 +3,8 @@ layout: layouts/docs.njk
 title: Redspot | Tutorial 
 templateClass: tmpl-docs
 eleventyNavigation:
-  key: Tutorial
+  key: Tutor1ial
+  url: https://patractlabs.github.io/substrate-contracts-book/en/redspot/tutorial/
   parent: en
   order: 4
 ---
