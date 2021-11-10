@@ -4,7 +4,7 @@ title: Redspot | 教程
 templateClass: tmpl-docs
 eleventyNavigation:
   key: Tutorial
-  url: https://patractlabs.github.io/substrate-contracts-book/redspot/tutorial/
+  url: https://docs.patract.io/redspot/intro/quick-start
   parent: zh-CN
   order: 4
 ---
