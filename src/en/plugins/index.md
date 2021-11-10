@@ -5,7 +5,7 @@ heading: Plugins
 templateClass: tmpl-plugins
 eleventyNavigation:
   key: Plugins
-  url: https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/
+  url: https://docs.patract.io/redspot/plugin/plugin
   parent: en
   order: 2
 ---
